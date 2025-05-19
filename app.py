@@ -5,11 +5,11 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 # Pega as variáveis de ambiente do .env
-DB_HOST = os.getenv('POSTGRES_HOST', 'localhost')
-DB_NAME = os.getenv('POSTGRES_DB', 'testedb')  # Aqui você deve ter testedb
-DB_USER = os.getenv('POSTGRES_USER', 'docker')
-DB_PASSWORD = os.getenv('POSTGRES_PASSWORD', 'password')
-DB_PORT = os.getenv('POSTGRES_PORT', '5432')
+DB_HOST = os.getenv('DB_HOST', 'localhost')
+DB_NAME = os.getenv('DB_NAME', 'testedb')
+DB_USER = os.getenv('DB_USER', 'docker')
+DB_PASSWORD = os.getenv('DB_PASSWORD', 'password')
+DB_PORT = os.getenv('DB_PORT', '5432')
 
 def get_usuarios():
     conn = psycopg2.connect(
